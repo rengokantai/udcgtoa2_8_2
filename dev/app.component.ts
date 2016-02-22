@@ -46,5 +46,9 @@ export class AppComponent {
     onGetPosts(){
         this._http.getPosts().subscribe(response=>this.response=response,error=>console.log(error));
     }
+    onPost(title:string,body:string,id:string){
+        this._http.createPost({title:title,body:body,id:+id}).subscribe(response=>this.response=response,
+        error=>console.log(error))
+    }
 
 }
